@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.virep.tiktokbot.listeners.MessageListener;
 import org.virep.tiktokbot.utils.Config;
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
                 .enableIntents(GatewayIntent.GUILD_MESSAGES,
                         GatewayIntent.MESSAGE_CONTENT,
                         GatewayIntent.DIRECT_MESSAGES)
+                .addEventListeners(new MessageListener())
                 .build()
                 .awaitReady();
 
